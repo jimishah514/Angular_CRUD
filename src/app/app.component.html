@@ -24,6 +24,31 @@
             </td>
           </tr>
         </tbody>
+        <h1 class="text-center">Wallets</h1>
+        <thead>
+          <tr>
+            <th class="text-center">Wallet ID</th>
+            <th class="text-center">Coin Name</th>
+            <th class="text-center">Code</th>
+            <th class="text-center">Balance</th>
+            <th class="text-center">&nbsp;</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let wallet of wallets">
+            <td>{{ wallet.id }}</td>
+            <td>{{ wallet.name }}</td>
+            <td>{{ wallet.code }}</td>
+            <td>{{ wallet.balance }}</td>
+
+            <td>
+              <button type="button" class="btn btn-info btn-sm mr-2" >Edit</button>
+
+              <button type="button" class="btn btn-danger btn-sm" >Delete</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
       <button class="btn btn-success" (click)="showAddUserForm()">Add New User</button>
 

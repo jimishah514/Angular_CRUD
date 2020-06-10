@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from './models/user';
+import { Wallet } from './models/wallet';
 import { UserService } from './services/user.service';
+import { WalletService } from './services/wallet.service';
 
 @Component({
   selector: 'app-root',
@@ -10,20 +12,26 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit {
 
   users: User[];
+  wallets: Wallet[];
   userForm: boolean;
   isNewUser: boolean;
   newUser: any = {};
   editUserForm: boolean;
   editedUser: any = {};
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private walletService: WalletService ) { }
 
   ngOnInit() {
     this.users = this.getUsers();
+    this.wallets = this.getWallets();
   }
 
   getUsers(): User[] {
     return this.userService.getUsersFromData();
+  }
+
+  getWallets(): Wallet[] {
+    return this.walletService.getWalletsFromData();
   }
 
   showEditUserForm(user: User) {

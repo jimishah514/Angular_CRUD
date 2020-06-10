@@ -9,13 +9,13 @@ export class UserService {
   private upersons: User[] = [
     {
       id: 1,
-      firstName: 'Durgesh',
-      lastName: 'Pal'
+      firstName: 'jimi',
+      lastName: 'shah'
     },
     {
       id: 2,
-      firstName: 'Ankur',
-      lastName: 'Pal'
+      firstName: 'jamal',
+      lastName: 'moosvi'
     }
   ];
 
